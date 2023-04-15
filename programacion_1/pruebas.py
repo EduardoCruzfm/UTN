@@ -35,6 +35,7 @@ while seguir == True:
             # (MÁXIMO)
 
             flag_primero = True
+            maxima_views = 0
 
             for tema in lista_bzrp:
                 if flag_primero == True or tema['views'] > maxima_views:
@@ -52,6 +53,7 @@ while seguir == True:
             # (MÍNIMO)
 
             flag_primero = True
+            minima_views = 0
 
             for tema in lista_bzrp:
                 if flag_primero == True or tema['views'] < minima_views:
@@ -80,7 +82,6 @@ while seguir == True:
 
             print(f"El promedio de visitas es: {promedio_views}")
 
-            pass
         case 6:
             seguir = False
 
