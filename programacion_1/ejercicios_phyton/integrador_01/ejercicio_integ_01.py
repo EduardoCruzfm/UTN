@@ -23,26 +23,27 @@ from data_stark import lista_personajes
 from os import system
 system("cls")
 
-#B. Recorrer la lista imprimiendo por consola el nombre de cada superhéroe
-for i in range(len(lista_personajes)):
+# #B. Recorrer la lista imprimiendo por consola el nombre de cada superhéroe
+# for i in range(len(lista_personajes)):
 
-    print(f"{i+1} - Nombre: {lista_personajes[i]['nombre']}")
+#     print(f"{i+1} - Nombre: {lista_personajes[i]['nombre']}")
 
-#C. Recorrer la lista imprimiendo por consola nombre de cada superhéroe junto a
-# la altura del mismo
-for i in range(len(lista_personajes)):
+# #C. Recorrer la lista imprimiendo por consola nombre de cada superhéroe junto a
+# # la altura del mismo
+# for i in range(len(lista_personajes)):
 
-    print(f"{i+1} - Nombre: {lista_personajes[i]['nombre']} - Altura: {lista_personajes[i]['altura']}")
+#     print(f"{i+1} - Nombre: {lista_personajes[i]['nombre']} - Altura: {lista_personajes[i]['altura']}")
 
 
 #D. Recorrer la lista y determinar cuál es el superhéroe más alto (MÁXIMO)
-for i in range(len(lista_personajes)):
-    superheroe_mas_alto = 0
-    superheroe_mas_alto_nombre = ""
+superheroe_mas_alto = 0
+superheroe_mas_alto_nombre = ""
+ban_mas_alto = True
 
-    ban_mas_alto = True
+for i in range(len(lista_personajes)):
+
     if ban_mas_alto == True or float(lista_personajes[i]["altura"]) > superheroe_mas_alto:
-        superheroe_mas_alto = lista_personajes[i]["altura"]
+        superheroe_mas_alto = float(lista_personajes[i]["altura"])
         superheroe_mas_alto_nombre = lista_personajes[i]["nombre"]
         ban_mas_alto = False
 
