@@ -1,3 +1,5 @@
+#pylint=singleton-comparison
+
 from os import system 
 from data_stark import lista_personajes
 
@@ -20,34 +22,9 @@ def mostrar_lista_nombre_altura():
         print(f"{i+1} - Nombre: {lista_personajes[i]['nombre']} - Altura: {lista_personajes[i]['altura']}")
 
 def mostrar_lista_superhéroe_alto_bajo():
-    #D. Recorrer la lista y determinar cuál es el superhéroe más alto (MÁXIMO)
-    superheroe_mas_alto = 0
-    superheroe_mas_alto_nombre = ""
-    ban_mas_alto = True
-
-    for i in range(len(lista_personajes)):
-
-        if ban_mas_alto == True or float(lista_personajes[i]["altura"]) > superheroe_mas_alto:
-            superheroe_mas_alto = float(lista_personajes[i]["altura"])
-            superheroe_mas_alto_nombre = lista_personajes[i]["nombre"]
-            ban_mas_alto = False
-
-    print(f"(+) _ El superheroe mas alto: {superheroe_mas_alto_nombre} - {superheroe_mas_alto} ")
+    mostrar_superhéroe_alto()
+    mostrar_superhéroe_bajo
         
-    # E. Recorrer la lista y determinar cuál es el superhéroe más bajo (MÍNIMO)
-    superheroe_mas_bajo = 0
-    superheroe_mas_bajo_nombre = ""
-    ban_mas_bajo = True
-
-    for i in range(len(lista_personajes)):
-
-        if ban_mas_bajo == True or float(lista_personajes[i]["altura"]) < superheroe_mas_bajo:
-            superheroe_mas_bajo = float(lista_personajes[i]["altura"])
-            superheroe_mas_bajo_nombre = lista_personajes[i]["nombre"]
-            ban_mas_bajo = False
-
-    print(f"(-) _ El superheroe mas bajo: {superheroe_mas_bajo_nombre} - {superheroe_mas_bajo} ")
-
 def calcular_promedio():
     # F. Recorrer la lista y determinar la altura promedio de los superhéroes (PROMEDIO)
     acu_altura = 0
@@ -86,3 +63,36 @@ def calcular_pesos():
 
     print(f"El superheroe mas pesado es: {superheroe_mas_pesado_nombre} - {superheroe_mas_pesado}")
     print(f"EL superheroe mas liviano es: {superheroe_mas_liviado_nombre} - {superheroe_mas_liviado}")
+
+
+
+def mostrar_superhéroe_alto():
+
+    #D. Recorrer la lista y determinar cuál es el superhéroe más alto (MÁXIMO)
+    superheroe_mas_alto = 0
+    superheroe_mas_alto_nombre = ""
+    ban_mas_alto = True
+
+    for i in range(len(lista_personajes)):
+
+        if ban_mas_alto == True or float(lista_personajes[i]["altura"]) > superheroe_mas_alto:
+            superheroe_mas_alto = float(lista_personajes[i]["altura"])
+            superheroe_mas_alto_nombre = lista_personajes[i]["nombre"]
+            ban_mas_alto = False
+
+    print(f"(+) _ El superheroe mas alto: {superheroe_mas_alto_nombre} - {superheroe_mas_alto} ")
+
+def mostrar_superhéroe_bajo():
+        # E. Recorrer la lista y determinar cuál es el superhéroe más bajo (MÍNIMO)
+    superheroe_mas_bajo = 0
+    superheroe_mas_bajo_nombre = ""
+    ban_mas_bajo = True
+
+    for i in range(len(lista_personajes)):
+
+        if ban_mas_bajo == True or float(lista_personajes[i]["altura"]) < superheroe_mas_bajo:
+            superheroe_mas_bajo = float(lista_personajes[i]["altura"])
+            superheroe_mas_bajo_nombre = lista_personajes[i]["nombre"]
+            ban_mas_bajo = False
+
+    print(f"(-) _ El superheroe mas bajo: {superheroe_mas_bajo_nombre} - {superheroe_mas_bajo} ")
