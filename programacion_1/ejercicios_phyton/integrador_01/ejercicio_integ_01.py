@@ -18,34 +18,30 @@ I. Ordenar el código implementando una función para cada uno de los valores
 informados.
 J. Construir un menú que permita elegir qué dato obtener
 '''
+# pylint: disable:import-error
+# pylint: disable=import-error
 
-from data_stark import lista_personajes
 from os import system
-system("cls")
+from funciones_aritmeticas import *
+system("cls")       
 
-# #B. Recorrer la lista imprimiendo por consola el nombre de cada superhéroe
-# for i in range(len(lista_personajes)):
+seguir = True
 
-#     print(f"{i+1} - Nombre: {lista_personajes[i]['nombre']}")
-
-# #C. Recorrer la lista imprimiendo por consola nombre de cada superhéroe junto a
-# # la altura del mismo
-# for i in range(len(lista_personajes)):
-
-#     print(f"{i+1} - Nombre: {lista_personajes[i]['nombre']} - Altura: {lista_personajes[i]['altura']}")
-
-
-#D. Recorrer la lista y determinar cuál es el superhéroe más alto (MÁXIMO)
-superheroe_mas_alto = 0
-superheroe_mas_alto_nombre = ""
-ban_mas_alto = True
-
-for i in range(len(lista_personajes)):
-
-    if ban_mas_alto == True or float(lista_personajes[i]["altura"]) > superheroe_mas_alto:
-        superheroe_mas_alto = float(lista_personajes[i]["altura"])
-        superheroe_mas_alto_nombre = lista_personajes[i]["nombre"]
-        ban_mas_alto = False
-
-print(f"El superheroe mas alto: {superheroe_mas_alto_nombre} - {superheroe_mas_alto} ")
+while seguir == True:
     
+    mostrar_menu()
+    repuesta = int(input("Ingrese una opcion: "))
+
+    match repuesta:
+        case 1:
+            mostrar_lista_nombre()  
+        case 2:
+            mostrar_lista_nombre_altura()
+        case 3:
+            mostrar_lista_superhéroe_alto_bajo()
+        case 4:
+            calcular_promedio()   
+        case 5:
+            calcular_pesos()
+        case 6:
+            seguir = False
